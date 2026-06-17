@@ -143,6 +143,7 @@ jobs:
       size: ${{ matrix.test_config.size }}
       config_file_path: ${{ matrix.test_config.config_file_path }}
       config_base_path: tests/e2e/weekly/multi_node/internal_dp/config
+      testcase_timeout: 600
       name: ${{ matrix.test_config.name }}
       vllm_ascend_ref: ${{ github.sha }}
       should_run: >-
@@ -207,6 +208,7 @@ jobs:
       image: 'swr.cn-southwest-2.myhuaweicloud.com/base_image/ascend-ci/vllm-ascend:nightly-ci-${{ matrix.vllm_ascend_branch }}-a3'
       config_file_path: ${{ matrix.test_config.config_file_path }}
       config_base_path: tests/e2e/weekly/single_node/configs/
+      testcase_timeout: 600
       name: ${{ matrix.test_config.name }}
       should_run: >-
         ${{
